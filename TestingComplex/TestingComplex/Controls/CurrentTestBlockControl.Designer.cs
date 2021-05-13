@@ -30,17 +30,13 @@ namespace TestingComplex.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrentTestBlockControl));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.countLabel = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.startTestButton = new Guna.UI.WinForms.GunaButton();
+            this.titleLabel = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,64 +45,17 @@ namespace TestingComplex.Controls
             this.gunaElipse1.Radius = 12;
             this.gunaElipse1.TargetControl = this;
             // 
-            // gunaPictureBox1
+            // countLabel
             // 
-            this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Radius = 12;
-            this.gunaPictureBox1.Size = new System.Drawing.Size(255, 120);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 19;
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel6.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel6.Location = new System.Drawing.Point(177, 395);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(79, 19);
-            this.gunaLabel6.TabIndex = 18;
-            this.gunaLabel6.Text = "19.03.2006";
-            this.gunaLabel6.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel7.ForeColor = System.Drawing.Color.LightGray;
-            this.gunaLabel7.Location = new System.Drawing.Point(163, 373);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(105, 19);
-            this.gunaLabel7.TabIndex = 17;
-            this.gunaLabel7.Text = "Дата создания:";
-            this.gunaLabel7.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Lime;
-            this.panel2.Location = new System.Drawing.Point(168, 395);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3, 19);
-            this.panel2.TabIndex = 16;
-            // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel5.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel5.Location = new System.Drawing.Point(27, 395);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(25, 19);
-            this.gunaLabel5.TabIndex = 15;
-            this.gunaLabel5.Text = "32";
-            this.gunaLabel5.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.countLabel.AutoSize = true;
+            this.countLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.countLabel.ForeColor = System.Drawing.Color.White;
+            this.countLabel.Location = new System.Drawing.Point(27, 395);
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(85, 19);
+            this.countLabel.TabIndex = 15;
+            this.countLabel.Text = "Нет данных";
+            this.countLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // gunaLabel4
             // 
@@ -128,47 +77,63 @@ namespace TestingComplex.Controls
             this.panel1.Size = new System.Drawing.Size(3, 19);
             this.panel1.TabIndex = 13;
             // 
-            // gunaButton1
+            // startTestButton
             // 
-            this.gunaButton1.Animated = true;
-            this.gunaButton1.AnimationHoverSpeed = 0.01F;
-            this.gunaButton1.AnimationSpeed = 0.001F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(34, 441);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(203)))), ((int)(((byte)(108)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 20;
-            this.gunaButton1.Size = new System.Drawing.Size(219, 57);
-            this.gunaButton1.TabIndex = 12;
-            this.gunaButton1.Text = "Пройти тест";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.startTestButton.Animated = true;
+            this.startTestButton.AnimationHoverSpeed = 0.01F;
+            this.startTestButton.AnimationSpeed = 0.001F;
+            this.startTestButton.BackColor = System.Drawing.Color.Transparent;
+            this.startTestButton.BaseColor = System.Drawing.Color.White;
+            this.startTestButton.BorderColor = System.Drawing.Color.Black;
+            this.startTestButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startTestButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.startTestButton.FocusedColor = System.Drawing.Color.Empty;
+            this.startTestButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startTestButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.startTestButton.Image = null;
+            this.startTestButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.startTestButton.Location = new System.Drawing.Point(34, 441);
+            this.startTestButton.Name = "startTestButton";
+            this.startTestButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(203)))), ((int)(((byte)(108)))));
+            this.startTestButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.startTestButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.startTestButton.OnHoverImage = null;
+            this.startTestButton.OnPressedColor = System.Drawing.Color.Black;
+            this.startTestButton.Radius = 20;
+            this.startTestButton.Size = new System.Drawing.Size(219, 57);
+            this.startTestButton.TabIndex = 12;
+            this.startTestButton.Text = "Пройти тест";
+            this.startTestButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startTestButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.startTestButton.Click += new System.EventHandler(this.startTestButton_Click);
             // 
-            // gunaLabel2
+            // titleLabel
             // 
-            this.gunaLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaLabel2.Location = new System.Drawing.Point(13, 139);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(255, 234);
-            this.gunaLabel2.TabIndex = 10;
-            this.gunaLabel2.Text = "Заголовок теста";
-            this.gunaLabel2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.titleLabel.Location = new System.Drawing.Point(13, 139);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(255, 234);
+            this.titleLabel.TabIndex = 10;
+            this.titleLabel.Text = "Тестовый блок не выбран";
+            this.titleLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::TestingComplex.Properties.Resources.Block_Image;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Radius = 12;
+            this.gunaPictureBox1.Size = new System.Drawing.Size(255, 120);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 19;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // CurrentTestBlockControl
             // 
@@ -176,14 +141,11 @@ namespace TestingComplex.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.gunaPictureBox1);
-            this.Controls.Add(this.gunaLabel6);
-            this.Controls.Add(this.gunaLabel7);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.gunaLabel5);
+            this.Controls.Add(this.countLabel);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.gunaButton1);
-            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.startTestButton);
+            this.Controls.Add(this.titleLabel);
             this.Name = "CurrentTestBlockControl";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(281, 511);
@@ -197,13 +159,10 @@ namespace TestingComplex.Controls
 
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel7;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaButton startTestButton;
+        public Guna.UI.WinForms.GunaLabel titleLabel;
+        public Guna.UI.WinForms.GunaLabel countLabel;
     }
 }

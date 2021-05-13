@@ -9,18 +9,40 @@ namespace TestingComplex
     public partial class MainForm : Form
     {
         public User CurrentUser { get; private set; }
+        public SideMenuControl SideMenu { get; private set; }
+        public HeaderControl Header { get; private set; }
         private readonly Point PageLocation = new Point(78, 84);
 
-        public TestsPage TestsPage;
+        private Control _CurrentPage;
+        public Control CurrentPage
+        {
+            get => _CurrentPage;
+            set
+            {
+                if (_CurrentPage != null)
+                {
+                    _CurrentPage.Dispose();
+                }
+                _CurrentPage = value;
+                _CurrentPage.Location = PageLocation;
+                this.Controls.Add(_CurrentPage);
+            }
+        }
 
         public MainForm()
         {
             InitializeComponent();
 
             State.Form = this;
-            TestsPage = new TestsPage();
-            this.Controls.Add(TestsPage);
-            TestsPage.Location = PageLocation;
+            CurrentPage = new TestsPage();
+            SideMenu = new SideMenuControl();
+            Header = new HeaderControl();
+            this.Controls.Add(SideMenu);
+            this.Controls.Add(Header);
+            SideMenu.Location = new Point(0, 0);
+            Header.Location = new Point(76, 20);
+            dragHeader.TargetControl = Header;
         }
+
     }
 }

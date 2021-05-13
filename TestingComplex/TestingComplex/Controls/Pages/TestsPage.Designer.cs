@@ -37,7 +37,6 @@ namespace TestingComplex.Controls
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.counterLabel = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.currentTestBlock = new TestingComplex.Controls.CurrentTestBlockControl();
             this.SuspendLayout();
             // 
@@ -127,19 +126,6 @@ namespace TestingComplex.Controls
             this.counterLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.counterLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
-            // gunaLabel10
-            // 
-            this.gunaLabel10.AutoSize = true;
-            this.gunaLabel10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.gunaLabel10.Location = new System.Drawing.Point(716, 10);
-            this.gunaLabel10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(192, 30);
-            this.gunaLabel10.TabIndex = 7;
-            this.gunaLabel10.Text = "Выбранный блок";
-            // 
             // currentTestBlock
             // 
             this.currentTestBlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
@@ -147,7 +133,7 @@ namespace TestingComplex.Controls
             this.currentTestBlock.Name = "currentTestBlock";
             this.currentTestBlock.Padding = new System.Windows.Forms.Padding(10);
             this.currentTestBlock.Size = new System.Drawing.Size(281, 511);
-            this.currentTestBlock.TabIndex = 0;
+            this.currentTestBlock.TabIndex = 7;
             // 
             // TestsPage
             // 
@@ -155,7 +141,6 @@ namespace TestingComplex.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(229)))), ((int)(((byte)(232)))));
             this.Controls.Add(this.currentTestBlock);
-            this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.counterLabel);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
@@ -179,7 +164,6 @@ namespace TestingComplex.Controls
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel counterLabel;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI.WinForms.GunaLabel gunaLabel10;
         public CurrentTestBlockControl currentTestBlock;
     }
 }

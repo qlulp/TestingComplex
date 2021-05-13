@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace TestingComplex.Classes.Entities
 {
-    class Question
+    public class Question
     {
+        public int ID { get; set; }
+        public int BlockID { get; set; }
+        public string QuestionStr { get; set; }
+        public string WrongAnswer1 { get; set; }
+        public string WrongAnswer2 { get; set; }
+        public string WrongAnswer3 { get; set; }
+        public string TrueAnswer { get; set; }
     }
 }

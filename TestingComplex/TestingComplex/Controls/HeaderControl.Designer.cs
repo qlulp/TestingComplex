@@ -36,7 +36,6 @@ namespace TestingComplex.Controls
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.closeButton = new Guna.UI.WinForms.GunaCircleButton();
             this.minimizeButton = new Guna.UI.WinForms.GunaCircleButton();
-            this.MaximizeMinimizeButton = new Guna.UI.WinForms.GunaCircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +84,7 @@ namespace TestingComplex.Controls
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Image = null;
             this.closeButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.closeButton.Location = new System.Drawing.Point(1126, 10);
+            this.closeButton.Location = new System.Drawing.Point(967, 10);
             this.closeButton.Name = "closeButton";
             this.closeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.closeButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -112,7 +111,7 @@ namespace TestingComplex.Controls
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
             this.minimizeButton.Image = null;
             this.minimizeButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.minimizeButton.Location = new System.Drawing.Point(1054, 10);
+            this.minimizeButton.Location = new System.Drawing.Point(931, 10);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.minimizeButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -125,46 +124,18 @@ namespace TestingComplex.Controls
             this.minimizeButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
-            // MaximizeMinimizeButton
-            // 
-            this.MaximizeMinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaximizeMinimizeButton.AnimationHoverSpeed = 0.07F;
-            this.MaximizeMinimizeButton.AnimationSpeed = 0.03F;
-            this.MaximizeMinimizeButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.MaximizeMinimizeButton.BorderColor = System.Drawing.Color.Black;
-            this.MaximizeMinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximizeMinimizeButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.MaximizeMinimizeButton.Enabled = false;
-            this.MaximizeMinimizeButton.FocusedColor = System.Drawing.Color.Empty;
-            this.MaximizeMinimizeButton.Font = new System.Drawing.Font("Impact", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MaximizeMinimizeButton.ForeColor = System.Drawing.Color.White;
-            this.MaximizeMinimizeButton.Image = null;
-            this.MaximizeMinimizeButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.MaximizeMinimizeButton.Location = new System.Drawing.Point(1090, 10);
-            this.MaximizeMinimizeButton.Name = "MaximizeMinimizeButton";
-            this.MaximizeMinimizeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
-            this.MaximizeMinimizeButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.MaximizeMinimizeButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.MaximizeMinimizeButton.OnHoverImage = null;
-            this.MaximizeMinimizeButton.OnPressedColor = System.Drawing.Color.Black;
-            this.MaximizeMinimizeButton.Size = new System.Drawing.Size(30, 30);
-            this.MaximizeMinimizeButton.TabIndex = 28;
-            this.MaximizeMinimizeButton.Text = "⁊";
-            this.MaximizeMinimizeButton.Click += new System.EventHandler(this.MaximizeMinimizeButton_Click);
-            // 
             // HeaderControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
-            this.Controls.Add(this.MaximizeMinimizeButton);
             this.Controls.Add(this.minimizeButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaCirclePictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "HeaderControl";
-            this.Size = new System.Drawing.Size(1169, 50);
+            this.Size = new System.Drawing.Size(1010, 50);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -177,6 +148,5 @@ namespace TestingComplex.Controls
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaCircleButton closeButton;
         private Guna.UI.WinForms.GunaCircleButton minimizeButton;
-        private Guna.UI.WinForms.GunaCircleButton MaximizeMinimizeButton;
     }
 }

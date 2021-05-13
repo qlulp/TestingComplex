@@ -52,7 +52,15 @@ namespace TestingComplex.Controls
 
         private void TestBlockControl_Click(object sender, EventArgs e)
         {
-
+            foreach (var control in State.Form.Controls)
+                if (control is TestsPage)
+                {
+                    (control as TestsPage).currentTestBlock.titleLabel.Text = titleLabel.Text;
+                    // Получение кол-ва вопросов и даты создания
+                    (control as TestsPage).currentTestBlock.countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
+                    (control as TestsPage).currentTestBlock.SelectedBlockID = CurrentBlock.ID;
+                    break;
+                }
         }
     }
 }

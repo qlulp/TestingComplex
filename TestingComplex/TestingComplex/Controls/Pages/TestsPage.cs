@@ -62,14 +62,17 @@ namespace TestingComplex.Controls
                 testBlocksPanel.Controls.Add(TestBlockControls[controlIndex]);
             }
 
-            // Второй столбец -- добавление на панель
-            point = new Point(offset * 2 + TestBlockControls[0].Width, offset);
-            int secondColumnCount = testBlocks.Count / 2;
-            for (int i = 0; i < secondColumnCount; i++, controlIndex++)
+            if (TestBlockControls.Count > 0)
             {
-                TestBlockControls[controlIndex].Location = point;
-                point.Y = point.Y + TestBlockControls[controlIndex].Height + offset;
-                testBlocksPanel.Controls.Add(TestBlockControls[controlIndex]);
+                // Второй столбец -- добавление на панель
+                point = new Point(offset * 2 + TestBlockControls[0].Width, offset);
+                int secondColumnCount = testBlocks.Count / 2;
+                for (int i = 0; i < secondColumnCount; i++, controlIndex++)
+                {
+                    TestBlockControls[controlIndex].Location = point;
+                    point.Y = point.Y + TestBlockControls[controlIndex].Height + offset;
+                    testBlocksPanel.Controls.Add(TestBlockControls[controlIndex]);
+                }
             }
 
             // Затычка для нормального отображения отступа внизу 

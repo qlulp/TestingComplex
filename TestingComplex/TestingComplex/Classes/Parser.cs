@@ -12,7 +12,7 @@ namespace TestingComplex.Classes
 {
     public static class Parser
     {
-        public static List<TestBlock> ToTestBlocks(DataTable table)
+        public static List<TestBlock> ToTestBlocksList(DataTable table)
         {
             var resultList = new List<TestBlock>();
             try
@@ -27,6 +27,32 @@ namespace TestingComplex.Classes
                     //table.Rows[i].Field<DateTime>("Дата создания").ToUniversalTime()
                     );
                     resultList.Add(tempTestBlock);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return resultList;
+        }
+        public static List<Question> ToQuestionList(DataTable table)
+        {
+            var resultList = new List<Question>();
+            try
+            {
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    var tempQuestion = new Question
+                    {
+                        ID = table.Rows[i].Field<int>(0),
+                        BlockID = table.Rows[i].Field<int>(1),
+                        QuestionStr = table.Rows[i].Field<string>(2),
+                        WrongAnswer1 = table.Rows[i].Field<string>(3),
+                        WrongAnswer2 = table.Rows[i].Field<string>(4),
+                        WrongAnswer3 = table.Rows[i].Field<string>(5),
+                        TrueAnswer = table.Rows[i].Field<string>(6)
+                    };
+                    resultList.Add(tempQuestion);
                 }
             }
             catch (Exception ex)
