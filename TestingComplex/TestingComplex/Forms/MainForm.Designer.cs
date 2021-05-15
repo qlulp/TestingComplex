@@ -39,12 +39,16 @@ namespace TestingComplex
             // 
             // elipseForm
             // 
-            this.elipseForm.Radius = 14;
+            this.elipseForm.Radius = 0;
             this.elipseForm.TargetControl = this;
             // 
             // dragForm
             // 
             this.dragForm.TargetControl = this;
+            // 
+            // dragHeader
+            // 
+            this.dragHeader.TargetControl = null;
             // 
             // MainForm
             // 

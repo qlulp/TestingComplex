@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestingComplex.Classes.Entities;
 
@@ -112,6 +109,81 @@ namespace TestingComplex.Classes
                      string query = $"INSERT INTO [Результаты тестирования] ([Логин пользователя], [Код блока], [Всего вопросов], [Верных ответов], [Дата тестирования], [Времени затрачено с])" +
                         $" VALUES ('{result.Login}', {result.BlockID}, {result.CountOfQuestions}, {result.CountOfCorrectAnswers}, '{result.Date.ToString("dd-MM-yyyy HH:mm:ss")}', {result.SecondsElapsed})";
                     // string query = $"insert into [Результаты тестирования] ([Логин пользователя]) values ('admin')";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void AddTestBlock(string blockName)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"INSERT INTO [Тестовые блоки] (Название) VALUES ('{blockName}')";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void DeleteTestBlock(int id)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"DELETE FROM [Тестовые блоки] WHERE [Код блока] LIKE {id}";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void DeleteQuestions(int blockID)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"DELETE FROM Вопросы WHERE [Код блока] LIKE {blockID}";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void RenameBlock(int id, string newBlockName)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"UPDATE [Тестовые блоки] SET Название = '{newBlockName}' WHERE [Код блока] LIKE {id}";
                     var command = new OleDbCommand(query, Connection);
                     command.ExecuteNonQuery();
                     Connection.Close();

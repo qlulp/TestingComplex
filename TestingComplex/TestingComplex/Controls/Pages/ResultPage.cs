@@ -71,5 +71,10 @@ namespace TestingComplex.Controls.Pages
             var page = new CurrentTestPage();
             State.Form.CurrentPage = page;
         }
+
+        private void ResultPage_Load(object sender, EventArgs e)
+        {
+            State.Form.SideMenu.SetButtonsEnabled(true);
+        }
     }
 }

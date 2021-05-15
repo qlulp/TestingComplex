@@ -213,6 +213,7 @@ namespace TestingComplex.Controls.Pages
             this.Controls.Add(this.questionLabel);
             this.Name = "CurrentTestPage";
             this.Size = new System.Drawing.Size(1002, 564);
+            this.Load += new System.EventHandler(this.CurrentTestPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

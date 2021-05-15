@@ -90,7 +90,7 @@ namespace TestingComplex.Controls.Pages
             this.BlockName.Location = new System.Drawing.Point(100, 40);
             this.BlockName.Margin = new System.Windows.Forms.Padding(100, 40, 100, 50);
             this.BlockName.Name = "BlockName";
-            this.BlockName.Size = new System.Drawing.Size(802, 129);
+            this.BlockName.Size = new System.Drawing.Size(810, 129);
             this.BlockName.TabIndex = 14;
             this.BlockName.Text = "П 112.17 Пожарно-технический минимум для руководителей, главных специалистов и ли" +
     "ц, ответственных за обеспечение пожарной безопасности организаций";
@@ -106,7 +106,7 @@ namespace TestingComplex.Controls.Pages
             this.QuestionsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.QuestionsLabel.Location = new System.Drawing.Point(113, 182);
             this.QuestionsLabel.Name = "QuestionsLabel";
-            this.QuestionsLabel.Size = new System.Drawing.Size(368, 42);
+            this.QuestionsLabel.Size = new System.Drawing.Size(376, 42);
             this.QuestionsLabel.TabIndex = 15;
             this.QuestionsLabel.Text = "Всего вопросов: 10";
             this.QuestionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +121,7 @@ namespace TestingComplex.Controls.Pages
             this.correctAnswersLabel.ForeColor = System.Drawing.Color.ForestGreen;
             this.correctAnswersLabel.Location = new System.Drawing.Point(113, 235);
             this.correctAnswersLabel.Name = "correctAnswersLabel";
-            this.correctAnswersLabel.Size = new System.Drawing.Size(385, 42);
+            this.correctAnswersLabel.Size = new System.Drawing.Size(393, 42);
             this.correctAnswersLabel.TabIndex = 16;
             this.correctAnswersLabel.Text = "Верных ответов: 10";
             this.correctAnswersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,7 +136,7 @@ namespace TestingComplex.Controls.Pages
             this.dateLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.dateLabel.Location = new System.Drawing.Point(517, 182);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(368, 42);
+            this.dateLabel.Size = new System.Drawing.Size(376, 42);
             this.dateLabel.TabIndex = 17;
             this.dateLabel.Text = "Дата прохождения: 20.10.2000 19:57";
             this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,7 +213,7 @@ namespace TestingComplex.Controls.Pages
             this.timePassedLabel.ForeColor = System.Drawing.Color.Gray;
             this.timePassedLabel.Location = new System.Drawing.Point(517, 235);
             this.timePassedLabel.Name = "timePassedLabel";
-            this.timePassedLabel.Size = new System.Drawing.Size(385, 42);
+            this.timePassedLabel.Size = new System.Drawing.Size(393, 42);
             this.timePassedLabel.TabIndex = 21;
             this.timePassedLabel.Text = "Времени затрачено: 20 минут";
             this.timePassedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,7 +236,7 @@ namespace TestingComplex.Controls.Pages
             this.wrongAnswersLabel.ForeColor = System.Drawing.Color.Firebrick;
             this.wrongAnswersLabel.Location = new System.Drawing.Point(113, 288);
             this.wrongAnswersLabel.Name = "wrongAnswersLabel";
-            this.wrongAnswersLabel.Size = new System.Drawing.Size(385, 42);
+            this.wrongAnswersLabel.Size = new System.Drawing.Size(393, 42);
             this.wrongAnswersLabel.TabIndex = 23;
             this.wrongAnswersLabel.Text = "Неверных ответов: 0";
             this.wrongAnswersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,7 +261,8 @@ namespace TestingComplex.Controls.Pages
             this.Controls.Add(this.BlockName);
             this.Controls.Add(this.closeTestButton);
             this.Name = "ResultPage";
-            this.Size = new System.Drawing.Size(1002, 564);
+            this.Size = new System.Drawing.Size(1010, 564);
+            this.Load += new System.EventHandler(this.ResultPage_Load);
             this.ResumeLayout(false);
 
         }

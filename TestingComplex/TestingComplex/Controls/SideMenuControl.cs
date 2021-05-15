@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestingComplex.Classes;
+using TestingComplex.Controls.Pages;
 
 namespace TestingComplex.Controls
 {
@@ -18,9 +20,34 @@ namespace TestingComplex.Controls
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private void testsButton_Click(object sender, EventArgs e)
         {
+            State.Form.CurrentPage = new TestsPage();
+            linePanel.Location = new Point(linePanel.Location.X, testsButton.Location.Y);
+        }
 
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            State.Form.CurrentPage = new RedactorPage();
+            linePanel.Location = new Point(linePanel.Location.X, editButton.Location.Y);
+        }
+
+        private void settingButton_Click(object sender, EventArgs e)
+        {
+            linePanel.Location = new Point(linePanel.Location.X, settingButton.Location.Y);
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            linePanel.Location = new Point(linePanel.Location.X, aboutButton.Location.Y);
+        }
+
+        public void SetButtonsEnabled(bool param)
+        {
+            foreach (GunaImageButton control in Controls.OfType<GunaImageButton>())
+            {
+                control.Enabled = param;
+            }
         }
     }
 }

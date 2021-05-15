@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using TestingComplex.Classes;
 using TestingComplex.Classes.Entities;
 using TestingComplex.Controls;
+using TestingComplex.Controls.Pages;
 
 namespace TestingComplex
 {
@@ -26,6 +27,7 @@ namespace TestingComplex
                 _CurrentPage = value;
                 _CurrentPage.Location = PageLocation;
                 this.Controls.Add(_CurrentPage);
+                    
             }
         }
 

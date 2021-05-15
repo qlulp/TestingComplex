@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using TestingComplex.Classes;
 using TestingComplex.Classes.Entities;
+using TestingComplex.Controls.Pages;
 
 namespace TestingComplex.Controls
 {
@@ -52,15 +53,20 @@ namespace TestingComplex.Controls
 
         private void TestBlockControl_Click(object sender, EventArgs e)
         {
-            foreach (var control in State.Form.Controls)
-                if (control is TestsPage)
-                {
-                    (control as TestsPage).currentTestBlock.titleLabel.Text = titleLabel.Text;
-                    // Получение кол-ва вопросов и даты создания
-                    (control as TestsPage).currentTestBlock.countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
-                    (control as TestsPage).currentTestBlock.SelectedBlockID = CurrentBlock.ID;
-                    break;
-                }
+            if (State.Form.CurrentPage is TestsPage)
+            {
+                (State.Form.CurrentPage as TestsPage).currentTestBlock.titleLabel.Text = titleLabel.Text;
+                // Получение кол-ва вопросов и даты создания
+                (State.Form.CurrentPage as TestsPage).currentTestBlock.countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
+                (State.Form.CurrentPage as TestsPage).currentTestBlock.SelectedBlockID = CurrentBlock.ID;
+            }
+            else if (State.Form.CurrentPage is RedactorPage)
+            {
+                (State.Form.CurrentPage as RedactorPage).renameTextBox.Text = titleLabel.Text;
+                // Получение кол-ва вопросов и даты создания
+                (State.Form.CurrentPage as RedactorPage).countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
+                (State.Form.CurrentPage as RedactorPage).SelectedBlockID = CurrentBlock.ID;
+            }
         }
     }
 }

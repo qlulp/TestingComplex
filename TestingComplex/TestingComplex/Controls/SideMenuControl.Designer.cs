@@ -29,12 +29,15 @@ namespace TestingComplex.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logoPictureBox = new Guna.UI.WinForms.GunaPictureBox();
             this.aboutButton = new Guna.UI.WinForms.GunaImageButton();
             this.testsButton = new Guna.UI.WinForms.GunaImageButton();
             this.editButton = new Guna.UI.WinForms.GunaImageButton();
             this.settingButton = new Guna.UI.WinForms.GunaImageButton();
+            this.linePanel = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +73,8 @@ namespace TestingComplex.Controls
             this.aboutButton.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.aboutButton.Size = new System.Drawing.Size(40, 40);
             this.aboutButton.TabIndex = 28;
-            this.aboutButton.Click += new System.EventHandler(this.Button_Click);
+            this.toolTip1.SetToolTip(this.aboutButton, "О приложении");
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // testsButton
             // 
@@ -84,7 +88,8 @@ namespace TestingComplex.Controls
             this.testsButton.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.testsButton.Size = new System.Drawing.Size(40, 40);
             this.testsButton.TabIndex = 27;
-            this.testsButton.Click += new System.EventHandler(this.Button_Click);
+            this.toolTip1.SetToolTip(this.testsButton, "Тесты");
+            this.testsButton.Click += new System.EventHandler(this.testsButton_Click);
             // 
             // editButton
             // 
@@ -98,7 +103,8 @@ namespace TestingComplex.Controls
             this.editButton.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.editButton.Size = new System.Drawing.Size(40, 40);
             this.editButton.TabIndex = 26;
-            this.editButton.Click += new System.EventHandler(this.Button_Click);
+            this.toolTip1.SetToolTip(this.editButton, "Редактор тестов");
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // settingButton
             // 
@@ -112,20 +118,31 @@ namespace TestingComplex.Controls
             this.settingButton.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.settingButton.Size = new System.Drawing.Size(40, 40);
             this.settingButton.TabIndex = 25;
-            this.settingButton.Click += new System.EventHandler(this.Button_Click);
+            this.toolTip1.SetToolTip(this.settingButton, "Настройки");
+            this.settingButton.Click += new System.EventHandler(this.settingButton_Click);
             // 
-            // SideMenu
+            // linePanel
+            // 
+            this.linePanel.BackColor = System.Drawing.Color.Indigo;
+            this.linePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linePanel.Location = new System.Drawing.Point(62, 76);
+            this.linePanel.Name = "linePanel";
+            this.linePanel.Size = new System.Drawing.Size(2, 40);
+            this.linePanel.TabIndex = 31;
+            // 
+            // SideMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
+            this.Controls.Add(this.linePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.testsButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.settingButton);
-            this.Name = "SideMenu";
+            this.Name = "SideMenuControl";
             this.Size = new System.Drawing.Size(64, 660);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -140,5 +157,7 @@ namespace TestingComplex.Controls
         private Guna.UI.WinForms.GunaImageButton testsButton;
         private Guna.UI.WinForms.GunaImageButton editButton;
         private Guna.UI.WinForms.GunaImageButton settingButton;
+        private System.Windows.Forms.Panel linePanel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
