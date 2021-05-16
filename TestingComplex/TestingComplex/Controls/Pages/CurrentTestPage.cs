@@ -24,7 +24,9 @@ namespace TestingComplex.Controls.Pages
             answer1Label.Text = State.Questions[State.QuestionIndex].WrongAnswer1;
             answer2Label.Text = State.Questions[State.QuestionIndex].WrongAnswer2;
             answer3Label.Text = State.Questions[State.QuestionIndex].WrongAnswer3;
-            answer4Label.Text = State.Questions[State.QuestionIndex].TrueAnswer;
+            answer4Label.Text = State.Questions[State.QuestionIndex].CorrectAnswer;
+            progressBar.Maximum = State.Questions.Length;
+            progressBar.Value = State.QuestionIndex;
         }
 
         private void Label_MouseEnter(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace TestingComplex.Controls.Pages
         {
             var label = (Guna.UI.WinForms.GunaLabel)sender;
 
-            if (label.Text == State.Questions[State.QuestionIndex].TrueAnswer)
+            if (label.Text == State.Questions[State.QuestionIndex].CorrectAnswer)
             {
                 State.Results[State.QuestionIndex] = true;
             }

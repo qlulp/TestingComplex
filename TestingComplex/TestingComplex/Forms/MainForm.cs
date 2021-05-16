@@ -42,7 +42,7 @@ namespace TestingComplex
             this.Controls.Add(SideMenu);
             this.Controls.Add(Header);
             SideMenu.Location = new Point(0, 0);
-            Header.Location = new Point(76, 20);
+            Header.Location = new Point(76, 14);
             dragHeader.TargetControl = Header;
         }
 

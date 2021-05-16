@@ -27,7 +27,7 @@ namespace TestingComplex.Controls
         private void UpdateCounter()
         {
             int count = testBlocksPanel.Controls.OfType<TestBlockControl>().ToList().Count;
-            counterLabel.Text = $"{count} из {count}";
+            counterLabel.Text = $"Всего: {count}";
         }
 
         private void ConfigureScrollBar()

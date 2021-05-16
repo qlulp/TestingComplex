@@ -18,7 +18,7 @@ namespace TestingComplex.Controls
             set => _OnHoverColor = value;
         }
 
-        private Color _BaseColor = Color.FromArgb(104, 150, 250);
+        private Color _BaseColor = Color.FromArgb(128, 128, 255);
         public Color BaseColor
         {
             get => _BaseColor;
@@ -60,12 +60,12 @@ namespace TestingComplex.Controls
                 (State.Form.CurrentPage as TestsPage).currentTestBlock.countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
                 (State.Form.CurrentPage as TestsPage).currentTestBlock.SelectedBlockID = CurrentBlock.ID;
             }
-            else if (State.Form.CurrentPage is RedactorPage)
+            else if (State.Form.CurrentPage is BlocksRedactorPage)
             {
-                (State.Form.CurrentPage as RedactorPage).renameTextBox.Text = titleLabel.Text;
+                (State.Form.CurrentPage as BlocksRedactorPage).renameTextBox.Text = titleLabel.Text;
                 // Получение кол-ва вопросов и даты создания
-                (State.Form.CurrentPage as RedactorPage).countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
-                (State.Form.CurrentPage as RedactorPage).SelectedBlockID = CurrentBlock.ID;
+                (State.Form.CurrentPage as BlocksRedactorPage).countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
+                (State.Form.CurrentPage as BlocksRedactorPage).SelectedBlockID = CurrentBlock.ID;
             }
         }
     }

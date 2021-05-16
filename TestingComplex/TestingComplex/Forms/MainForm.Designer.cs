@@ -39,7 +39,7 @@ namespace TestingComplex
             // 
             // elipseForm
             // 
-            this.elipseForm.Radius = 0;
+            this.elipseForm.Radius = 18;
             this.elipseForm.TargetControl = this;
             // 
             // dragForm
@@ -54,7 +54,7 @@ namespace TestingComplex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(229)))), ((int)(((byte)(232)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1100, 660);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

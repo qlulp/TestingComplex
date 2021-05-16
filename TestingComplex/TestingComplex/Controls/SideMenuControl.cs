@@ -28,7 +28,7 @@ namespace TestingComplex.Controls
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            State.Form.CurrentPage = new RedactorPage();
+            State.Form.CurrentPage = new BlocksRedactorPage();
             linePanel.Location = new Point(linePanel.Location.X, editButton.Location.Y);
         }
 

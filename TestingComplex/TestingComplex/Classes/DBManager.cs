@@ -70,6 +70,7 @@ namespace TestingComplex.Classes
             
             return result;
         }
+
         public static DataTable GetQuestions(int blockID)
         {
             string tableName = "Вопросы";
@@ -184,6 +185,25 @@ namespace TestingComplex.Classes
                 {
                     Connection.Open();
                     string query = $"UPDATE [Тестовые блоки] SET Название = '{newBlockName}' WHERE [Код блока] LIKE {id}";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void AddQuestion(Question question)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"INSERT INTO Вопросы ([Код блока], Вопрос, [Неверный  ответ 1], [Неверный  ответ 2], [Неверный  ответ 3], [Верный ответ]) VALUES ({question.BlockID}, '{question.QuestionStr}', '{question.WrongAnswer1}', '{question.WrongAnswer2}', '{question.WrongAnswer3}', '{question.CorrectAnswer}')";
                     var command = new OleDbCommand(query, Connection);
                     command.ExecuteNonQuery();
                     Connection.Close();

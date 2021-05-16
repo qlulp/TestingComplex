@@ -120,16 +120,17 @@ namespace TestingComplex.Controls
             this.currentTestBlock.Location = new System.Drawing.Point(729, 34);
             this.currentTestBlock.Name = "currentTestBlock";
             this.currentTestBlock.Padding = new System.Windows.Forms.Padding(10);
+            this.currentTestBlock.SelectedBlockID = -1;
             this.currentTestBlock.Size = new System.Drawing.Size(281, 530);
-            this.currentTestBlock.TabIndex = 7;
+            this.currentTestBlock.TabIndex = 9;
             // 
             // TestsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.currentTestBlock);
+            this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.counterLabel);
             this.Controls.Add(this.gunaVScrollBar1);
             this.Controls.Add(this.testBlocksPanel);
@@ -149,7 +150,7 @@ namespace TestingComplex.Controls
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
         private Guna.UI.WinForms.GunaLabel counterLabel;
-        public CurrentTestBlockControl currentTestBlock;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        public CurrentTestBlockControl currentTestBlock;
     }
 }

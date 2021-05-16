@@ -14,7 +14,15 @@ namespace TestingComplex.Controls
 {
     public partial class CurrentTestBlockControl : UserControl
     {
-        public int SelectedBlockID = 0;
+        private int _SelectedBlockID = -1;
+        public int SelectedBlockID
+        {
+            get => _SelectedBlockID;
+            set
+            {
+                _SelectedBlockID = value;
+            }
+        }
         public CurrentTestBlockControl()
         {
             InitializeComponent();

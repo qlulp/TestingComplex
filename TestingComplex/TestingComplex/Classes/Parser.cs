@@ -50,7 +50,7 @@ namespace TestingComplex.Classes
                         WrongAnswer1 = table.Rows[i].Field<string>(3),
                         WrongAnswer2 = table.Rows[i].Field<string>(4),
                         WrongAnswer3 = table.Rows[i].Field<string>(5),
-                        TrueAnswer = table.Rows[i].Field<string>(6)
+                        CorrectAnswer = table.Rows[i].Field<string>(6)
                     };
                     resultList.Add(tempQuestion);
                 }
