@@ -123,8 +123,8 @@ namespace TestingComplex.Controls
             // 
             // linePanel
             // 
-            this.linePanel.BackColor = System.Drawing.Color.Indigo;
-            this.linePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linePanel.ForeColor = System.Drawing.Color.Black;
             this.linePanel.Location = new System.Drawing.Point(62, 76);
             this.linePanel.Name = "linePanel";
             this.linePanel.Size = new System.Drawing.Size(2, 40);

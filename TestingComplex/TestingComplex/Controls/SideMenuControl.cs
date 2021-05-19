@@ -18,6 +18,7 @@ namespace TestingComplex.Controls
         public SideMenuControl()
         {
             InitializeComponent();
+            BackColor = CurrentTheme.PageColor;
         }
 
         private void testsButton_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace TestingComplex.Controls
         private void aboutButton_Click(object sender, EventArgs e)
         {
             linePanel.Location = new Point(linePanel.Location.X, aboutButton.Location.Y);
+            State.Form.CurrentPage = new AboutProgramPage();
         }
 
         public void SetButtonsEnabled(bool param)

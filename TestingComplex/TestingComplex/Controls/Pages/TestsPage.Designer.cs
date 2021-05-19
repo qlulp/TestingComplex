@@ -46,7 +46,7 @@ namespace TestingComplex.Controls
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel1.Location = new System.Drawing.Point(0, 0);
@@ -103,7 +103,7 @@ namespace TestingComplex.Controls
             // gunaLabel8
             // 
             this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel8.Location = new System.Drawing.Point(724, 0);
@@ -146,11 +146,11 @@ namespace TestingComplex.Controls
         #endregion
 
         private Guna.UI.WinForms.GunaElipse elipsePage;
-        private Guna.UI.WinForms.GunaElipsePanel testBlocksPanel;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
         private Guna.UI.WinForms.GunaLabel counterLabel;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         public CurrentTestBlockControl currentTestBlock;
+        public Guna.UI.WinForms.GunaElipsePanel testBlocksPanel;
     }
 }

@@ -26,6 +26,8 @@ namespace TestingComplex.Controls
         public CurrentTestBlockControl()
         {
             InitializeComponent();
+
+            BackColor = CurrentTheme.SelectedColor;
         }
 
         private void startTestButton_Click(object sender, EventArgs e)

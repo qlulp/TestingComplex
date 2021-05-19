@@ -29,12 +29,15 @@ namespace TestingComplex.Controls.Pages
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pageTitleLabel = new Guna.UI.WinForms.GunaLabel();
             this.counterLabel = new Guna.UI.WinForms.GunaLabel();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
             this.questionsPanel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.selectedBlockPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.clearFieldsButton = new Guna.UI.WinForms.GunaButton();
+            this.questionTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.questionIDTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.updateButton = new Guna.UI.WinForms.GunaButton();
@@ -49,7 +52,8 @@ namespace TestingComplex.Controls.Pages
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.deleteButton = new Guna.UI.WinForms.GunaButton();
             this.AddButton = new Guna.UI.WinForms.GunaButton();
-            this.questionTextBox = new Guna.UI.WinForms.GunaTextBox();
+            this.titleLabel = new Guna.UI.WinForms.GunaLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.selectedBlockPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,21 +62,22 @@ namespace TestingComplex.Controls.Pages
             this.pageTitleLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pageTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.pageTitleLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pageTitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.pageTitleLabel.Location = new System.Drawing.Point(168, 0);
             this.pageTitleLabel.Name = "pageTitleLabel";
             this.pageTitleLabel.Size = new System.Drawing.Size(343, 30);
             this.pageTitleLabel.TabIndex = 20;
             this.pageTitleLabel.Text = "Все вопросы";
             this.pageTitleLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.pageTitleLabel.Click += new System.EventHandler(this.pageTitleLabel_Click);
             // 
             // counterLabel
             // 
             this.counterLabel.BackColor = System.Drawing.Color.Transparent;
             this.counterLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.counterLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.counterLabel.Location = new System.Drawing.Point(437, 11);
+            this.counterLabel.Location = new System.Drawing.Point(507, 11);
             this.counterLabel.Name = "counterLabel";
-            this.counterLabel.Size = new System.Drawing.Size(157, 23);
+            this.counterLabel.Size = new System.Drawing.Size(87, 23);
             this.counterLabel.TabIndex = 19;
             this.counterLabel.Text = "0 из 0";
             this.counterLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -109,7 +114,7 @@ namespace TestingComplex.Controls.Pages
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel5.Location = new System.Drawing.Point(612, 0);
@@ -124,6 +129,7 @@ namespace TestingComplex.Controls.Pages
             // 
             this.selectedBlockPanel.BackColor = System.Drawing.Color.Transparent;
             this.selectedBlockPanel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.selectedBlockPanel.Controls.Add(this.clearFieldsButton);
             this.selectedBlockPanel.Controls.Add(this.questionTextBox);
             this.selectedBlockPanel.Controls.Add(this.gunaLabel8);
             this.selectedBlockPanel.Controls.Add(this.questionIDTextBox);
@@ -147,6 +153,59 @@ namespace TestingComplex.Controls.Pages
             this.selectedBlockPanel.Size = new System.Drawing.Size(393, 530);
             this.selectedBlockPanel.TabIndex = 21;
             // 
+            // clearFieldsButton
+            // 
+            this.clearFieldsButton.Animated = true;
+            this.clearFieldsButton.AnimationHoverSpeed = 0.01F;
+            this.clearFieldsButton.AnimationSpeed = 0.001F;
+            this.clearFieldsButton.BackColor = System.Drawing.Color.Transparent;
+            this.clearFieldsButton.BaseColor = System.Drawing.Color.White;
+            this.clearFieldsButton.BorderColor = System.Drawing.Color.Black;
+            this.clearFieldsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearFieldsButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.clearFieldsButton.FocusedColor = System.Drawing.Color.Empty;
+            this.clearFieldsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clearFieldsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.clearFieldsButton.Image = null;
+            this.clearFieldsButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.clearFieldsButton.Location = new System.Drawing.Point(35, 467);
+            this.clearFieldsButton.Margin = new System.Windows.Forms.Padding(30, 20, 30, 10);
+            this.clearFieldsButton.Name = "clearFieldsButton";
+            this.clearFieldsButton.OnHoverBaseColor = System.Drawing.Color.Crimson;
+            this.clearFieldsButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.clearFieldsButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.clearFieldsButton.OnHoverImage = null;
+            this.clearFieldsButton.OnPressedColor = System.Drawing.Color.Black;
+            this.clearFieldsButton.Radius = 18;
+            this.clearFieldsButton.Size = new System.Drawing.Size(172, 40);
+            this.clearFieldsButton.TabIndex = 34;
+            this.clearFieldsButton.Text = "Очистить поля";
+            this.clearFieldsButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clearFieldsButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.clearFieldsButton.Click += new System.EventHandler(this.clearFieldsButton_Click);
+            // 
+            // questionTextBox
+            // 
+            this.questionTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.questionTextBox.BaseColor = System.Drawing.Color.White;
+            this.questionTextBox.BorderColor = System.Drawing.Color.Silver;
+            this.questionTextBox.BorderSize = 0;
+            this.questionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.questionTextBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.questionTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.questionTextBox.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.questionTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.questionTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
+            this.questionTextBox.Location = new System.Drawing.Point(23, 89);
+            this.questionTextBox.MaxLength = 255;
+            this.questionTextBox.Multiline = true;
+            this.questionTextBox.Name = "questionTextBox";
+            this.questionTextBox.PasswordChar = '\0';
+            this.questionTextBox.Radius = 12;
+            this.questionTextBox.SelectedText = "";
+            this.questionTextBox.Size = new System.Drawing.Size(345, 75);
+            this.questionTextBox.TabIndex = 33;
+            // 
             // gunaLabel8
             // 
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -162,7 +221,7 @@ namespace TestingComplex.Controls.Pages
             // questionIDTextBox
             // 
             this.questionIDTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.questionIDTextBox.BaseColor = System.Drawing.Color.White;
+            this.questionIDTextBox.BaseColor = System.Drawing.Color.Gainsboro;
             this.questionIDTextBox.BorderColor = System.Drawing.Color.Silver;
             this.questionIDTextBox.BorderSize = 0;
             this.questionIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -195,7 +254,7 @@ namespace TestingComplex.Controls.Pages
             this.updateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.updateButton.Image = null;
             this.updateButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.updateButton.Location = new System.Drawing.Point(110, 470);
+            this.updateButton.Location = new System.Drawing.Point(35, 415);
             this.updateButton.Margin = new System.Windows.Forms.Padding(30, 20, 30, 10);
             this.updateButton.Name = "updateButton";
             this.updateButton.OnHoverBaseColor = System.Drawing.Color.Purple;
@@ -204,11 +263,12 @@ namespace TestingComplex.Controls.Pages
             this.updateButton.OnHoverImage = null;
             this.updateButton.OnPressedColor = System.Drawing.Color.Black;
             this.updateButton.Radius = 18;
-            this.updateButton.Size = new System.Drawing.Size(181, 40);
+            this.updateButton.Size = new System.Drawing.Size(172, 40);
             this.updateButton.TabIndex = 30;
-            this.updateButton.Text = "Изменить вопрос";
+            this.updateButton.Text = "Обновить данные";
             this.updateButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.updateButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // gunaLabel7
             // 
@@ -369,7 +429,7 @@ namespace TestingComplex.Controls.Pages
             this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.deleteButton.Image = null;
             this.deleteButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteButton.Location = new System.Drawing.Point(34, 418);
+            this.deleteButton.Location = new System.Drawing.Point(224, 467);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.OnHoverBaseColor = System.Drawing.Color.Red;
@@ -378,11 +438,12 @@ namespace TestingComplex.Controls.Pages
             this.deleteButton.OnHoverImage = null;
             this.deleteButton.OnPressedColor = System.Drawing.Color.Black;
             this.deleteButton.Radius = 18;
-            this.deleteButton.Size = new System.Drawing.Size(158, 40);
+            this.deleteButton.Size = new System.Drawing.Size(144, 40);
             this.deleteButton.TabIndex = 20;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.deleteButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // AddButton
             // 
@@ -399,7 +460,7 @@ namespace TestingComplex.Controls.Pages
             this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
             this.AddButton.Image = null;
             this.AddButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.AddButton.Location = new System.Drawing.Point(213, 418);
+            this.AddButton.Location = new System.Drawing.Point(224, 415);
             this.AddButton.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.AddButton.Name = "AddButton";
             this.AddButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(203)))), ((int)(((byte)(108)))));
@@ -408,39 +469,31 @@ namespace TestingComplex.Controls.Pages
             this.AddButton.OnHoverImage = null;
             this.AddButton.OnPressedColor = System.Drawing.Color.Black;
             this.AddButton.Radius = 18;
-            this.AddButton.Size = new System.Drawing.Size(150, 40);
+            this.AddButton.Size = new System.Drawing.Size(139, 40);
             this.AddButton.TabIndex = 13;
             this.AddButton.Text = "Добавить";
             this.AddButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AddButton.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // questionTextBox
+            // titleLabel
             // 
-            this.questionTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.questionTextBox.BaseColor = System.Drawing.Color.White;
-            this.questionTextBox.BorderColor = System.Drawing.Color.Silver;
-            this.questionTextBox.BorderSize = 0;
-            this.questionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.questionTextBox.FocusedBaseColor = System.Drawing.Color.White;
-            this.questionTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.questionTextBox.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
-            this.questionTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.questionTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(54)))), ((int)(((byte)(255)))));
-            this.questionTextBox.Location = new System.Drawing.Point(23, 89);
-            this.questionTextBox.MaxLength = 255;
-            this.questionTextBox.Multiline = true;
-            this.questionTextBox.Name = "questionTextBox";
-            this.questionTextBox.PasswordChar = '\0';
-            this.questionTextBox.Radius = 12;
-            this.questionTextBox.SelectedText = "";
-            this.questionTextBox.Size = new System.Drawing.Size(345, 75);
-            this.questionTextBox.TabIndex = 33;
+            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.titleLabel.Location = new System.Drawing.Point(3, 0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(508, 30);
+            this.titleLabel.TabIndex = 23;
+            this.titleLabel.Text = "Все вопросы";
+            this.titleLabel.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // QuestionsRedactorPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.selectedBlockPanel);
             this.Controls.Add(this.pageTitleLabel);
@@ -460,7 +513,6 @@ namespace TestingComplex.Controls.Pages
         private Guna.UI.WinForms.GunaLabel pageTitleLabel;
         private Guna.UI.WinForms.GunaLabel counterLabel;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
-        private Guna.UI.WinForms.GunaElipsePanel questionsPanel;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaElipsePanel selectedBlockPanel;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
@@ -478,5 +530,9 @@ namespace TestingComplex.Controls.Pages
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         public Guna.UI.WinForms.GunaTextBox questionIDTextBox;
         public Guna.UI.WinForms.GunaTextBox questionTextBox;
+        public Guna.UI.WinForms.GunaElipsePanel questionsPanel;
+        private Guna.UI.WinForms.GunaButton clearFieldsButton;
+        private Guna.UI.WinForms.GunaLabel titleLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

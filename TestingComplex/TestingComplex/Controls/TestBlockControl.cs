@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using TestingComplex.Classes;
 using TestingComplex.Classes.Entities;
@@ -11,27 +11,28 @@ namespace TestingComplex.Controls
     {
         public TestBlock CurrentBlock;
 
-        private Color _OnHoverColor = Color.FromArgb(95, 54, 255);
-        public Color OnHoverColor
+        private bool _IsSelected = false;
+        public bool IsSelected
         {
-            get => _OnHoverColor;
-            set => _OnHoverColor = value;
-        }
-
-        private Color _BaseColor = Color.FromArgb(128, 128, 255);
-        public Color BaseColor
-        {
-            get => _BaseColor;
+            get => _IsSelected;
             set
             {
-                _BaseColor = value;
-                BackColor = value;
+                _IsSelected = value;
+                if (value)
+                {
+                    BackColor = CurrentTheme.SelectedColor; 
+                }
+                else
+                {
+                    BackColor = CurrentTheme.BaseColor;
+                }
             }
         }
 
         public TestBlockControl()
         {
             InitializeComponent();
+            BackColor = CurrentTheme.BaseColor;
         }
 
         public TestBlockControl(TestBlock testBlock)
@@ -43,12 +44,13 @@ namespace TestingComplex.Controls
 
         private void TestBlock_MouseEnter(object sender, EventArgs e)
         {
-            BackColor = OnHoverColor;
+            BackColor = CurrentTheme.SelectedColor;
         }
 
         private void TestBlock_MouseLeave(object sender, EventArgs e)
         {
-            BackColor = BaseColor;
+            if (!IsSelected)
+                BackColor = CurrentTheme.BaseColor;
         }
 
         private void TestBlockControl_Click(object sender, EventArgs e)
@@ -59,6 +61,15 @@ namespace TestingComplex.Controls
                 // Получение кол-ва вопросов и даты создания
                 (State.Form.CurrentPage as TestsPage).currentTestBlock.countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
                 (State.Form.CurrentPage as TestsPage).currentTestBlock.SelectedBlockID = CurrentBlock.ID;
+
+                // Подсветка выбранного блока
+
+                foreach (var block in (State.Form.CurrentPage as TestsPage).testBlocksPanel.Controls.OfType<TestBlockControl>())
+                {
+                    block.IsSelected = false;
+                }
+                this.IsSelected = true;
+                
             }
             else if (State.Form.CurrentPage is BlocksRedactorPage)
             {
@@ -66,6 +77,14 @@ namespace TestingComplex.Controls
                 // Получение кол-ва вопросов и даты создания
                 (State.Form.CurrentPage as BlocksRedactorPage).countLabel.Text = DBManager.GetCountOfQuestions(CurrentBlock.ID).ToString();
                 (State.Form.CurrentPage as BlocksRedactorPage).SelectedBlockID = CurrentBlock.ID;
+
+                // Подсветка выбранного блока
+
+                foreach (var block in (State.Form.CurrentPage as BlocksRedactorPage).testBlocksPanel.Controls.OfType<TestBlockControl>())
+                {
+                    block.IsSelected = false;
+                }
+                this.IsSelected = true;
             }
         }
     }

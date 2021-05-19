@@ -167,7 +167,7 @@ namespace TestingComplex.Controls.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(253)))));
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.answer4Label);
             this.Controls.Add(this.answer1Label);

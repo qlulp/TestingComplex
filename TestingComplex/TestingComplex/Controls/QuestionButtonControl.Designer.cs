@@ -94,6 +94,6 @@ namespace TestingComplex.Controls
         #endregion
         private Guna.UI.WinForms.GunaLabel titleLabel;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Guna.UI.WinForms.GunaElipsePanel backPanel;
+        public Guna.UI.WinForms.GunaElipsePanel backPanel;
     }
 }

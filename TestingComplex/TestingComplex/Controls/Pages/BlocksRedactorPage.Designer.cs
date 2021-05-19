@@ -168,7 +168,7 @@ namespace TestingComplex.Controls.Pages
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel1.Location = new System.Drawing.Point(724, 1);
@@ -195,7 +195,7 @@ namespace TestingComplex.Controls.Pages
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel3.Location = new System.Drawing.Point(3, 1);
@@ -386,7 +386,7 @@ namespace TestingComplex.Controls.Pages
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gunaLabel5.Location = new System.Drawing.Point(724, 198);
@@ -397,7 +397,7 @@ namespace TestingComplex.Controls.Pages
             this.gunaLabel5.Text = "Выбранный блок";
             this.gunaLabel5.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
-            // RedactorPage
+            // BlocksRedactorPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,7 +410,7 @@ namespace TestingComplex.Controls.Pages
             this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.gunaVScrollBar1);
             this.Controls.Add(this.testBlocksPanel);
-            this.Name = "RedactorPage";
+            this.Name = "BlocksRedactorPage";
             this.Size = new System.Drawing.Size(1010, 564);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.selectedBlockPanel.ResumeLayout(false);
@@ -424,7 +424,6 @@ namespace TestingComplex.Controls.Pages
 
         private Guna.UI.WinForms.GunaElipse elipsePage;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
-        private Guna.UI.WinForms.GunaElipsePanel testBlocksPanel;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaButton CreateButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
@@ -442,5 +441,6 @@ namespace TestingComplex.Controls.Pages
         public Guna.UI.WinForms.GunaTextBox renameTextBox;
         private Guna.UI.WinForms.GunaButton deleteButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        public Guna.UI.WinForms.GunaElipsePanel testBlocksPanel;
     }
 }

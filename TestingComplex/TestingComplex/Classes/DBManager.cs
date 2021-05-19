@@ -42,7 +42,7 @@ namespace TestingComplex.Classes
         {
             return Parser.ToTestBlocksList(GetTableByName("Тестовые блоки"));
         }
-        
+
         public static int GetCountOfQuestions(int blockID)
         {
             string tableName = "Вопросы";
@@ -67,7 +67,7 @@ namespace TestingComplex.Classes
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
             return result;
         }
 
@@ -82,7 +82,7 @@ namespace TestingComplex.Classes
                 {
                     Connection.Open();
                     // string query = $"SELECT * FROM {tableName} WHERE [Код блока] LIKE {blockID}";
-                    string query = $"SELECT * FROM Вопросы WHERE [Код блока] LIKE 1";
+                    string query = $"SELECT * FROM Вопросы WHERE [Код блока] LIKE {blockID}";
                     var command = new OleDbCommand(query, Connection);
                     var adapter = new OleDbDataAdapter(command);
                     adapter.Fill(result);
@@ -107,8 +107,8 @@ namespace TestingComplex.Classes
                     Connection.Open();
                     DateTimePicker picker = new DateTimePicker();
                     picker.Value = result.Date;
-                     string query = $"INSERT INTO [Результаты тестирования] ([Логин пользователя], [Код блока], [Всего вопросов], [Верных ответов], [Дата тестирования], [Времени затрачено с])" +
-                        $" VALUES ('{result.Login}', {result.BlockID}, {result.CountOfQuestions}, {result.CountOfCorrectAnswers}, '{result.Date.ToString("dd-MM-yyyy HH:mm:ss")}', {result.SecondsElapsed})";
+                    string query = $"INSERT INTO [Результаты тестирования] ([Логин пользователя], [Код блока], [Всего вопросов], [Верных ответов], [Дата тестирования], [Времени затрачено с])" +
+                       $" VALUES ('{result.Login}', {result.BlockID}, {result.CountOfQuestions}, {result.CountOfCorrectAnswers}, '{result.Date.ToString("dd-MM-yyyy HH:mm:ss")}', {result.SecondsElapsed})";
                     // string query = $"insert into [Результаты тестирования] ([Логин пользователя]) values ('admin')";
                     var command = new OleDbCommand(query, Connection);
                     command.ExecuteNonQuery();
@@ -177,6 +177,25 @@ namespace TestingComplex.Classes
             }
         }
 
+        internal static void UpdateQuestion(Question question)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"UPDATE Вопросы SET Вопрос = '{question.QuestionStr}', [Неверный ответ 1] = '{question.WrongAnswer1}', [Неверный ответ 2] = '{question.WrongAnswer2}', [Неверный ответ 3] = '{question.WrongAnswer3}', [Верный ответ] = '{question.CorrectAnswer}' WHERE [Код вопроса] LIKE {question.ID}";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public static void RenameBlock(int id, string newBlockName)
         {
             try
@@ -203,7 +222,26 @@ namespace TestingComplex.Classes
                 using (Connection = new OleDbConnection(ConnectionString))
                 {
                     Connection.Open();
-                    string query = $"INSERT INTO Вопросы ([Код блока], Вопрос, [Неверный  ответ 1], [Неверный  ответ 2], [Неверный  ответ 3], [Верный ответ]) VALUES ({question.BlockID}, '{question.QuestionStr}', '{question.WrongAnswer1}', '{question.WrongAnswer2}', '{question.WrongAnswer3}', '{question.CorrectAnswer}')";
+                    string query = $"INSERT INTO Вопросы ([Код блока], Вопрос, [Неверный ответ 1], [Неверный ответ 2], [Неверный ответ 3], [Верный ответ]) VALUES ({question.BlockID}, '{question.QuestionStr}', '{question.WrongAnswer1}', '{question.WrongAnswer2}', '{question.WrongAnswer3}', '{question.CorrectAnswer}')";
+                    var command = new OleDbCommand(query, Connection);
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void DeleteQuestion(int questionID)
+        {
+            try
+            {
+                using (Connection = new OleDbConnection(ConnectionString))
+                {
+                    Connection.Open();
+                    string query = $"DELETE FROM Вопросы WHERE [Код вопроса] LIKE {questionID}";
                     var command = new OleDbCommand(query, Connection);
                     command.ExecuteNonQuery();
                     Connection.Close();

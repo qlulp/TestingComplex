@@ -17,6 +17,23 @@ namespace TestingComplex.Controls
     {
         public int QuestionID { get; set; }
         private Question _Question;
+        private bool _IsSelected = false;
+        public bool IsSelected
+        {
+            get => _IsSelected;
+            set
+            {
+                _IsSelected = value;
+                if (value)
+                {
+                    backPanel.BaseColor = CurrentTheme.SelectedColor;
+                }
+                else
+                {
+                    backPanel.BaseColor = CurrentTheme.BaseColor;
+                }
+            }
+        }
         public Question Question
         {
             get => _Question;
@@ -39,12 +56,13 @@ namespace TestingComplex.Controls
 
         private void titleLabel_MouseEnter(object sender, EventArgs e)
         {
-            backPanel.BaseColor = Color.FromArgb(95, 54, 255);
+            backPanel.BaseColor = CurrentTheme.SelectedColor;
         }
 
         private void titleLabel_MouseLeave(object sender, EventArgs e)
         {
-            backPanel.BaseColor = Color.FromArgb(128, 128, 255);
+            if (!IsSelected)
+                backPanel.BaseColor = CurrentTheme.SelectedColor;
         }
 
         private void backPanel_Click(object sender, EventArgs e)
@@ -57,6 +75,14 @@ namespace TestingComplex.Controls
                 (State.Form.CurrentPage as QuestionsRedactorPage).answer2TextBox.Text = Question.WrongAnswer2;
                 (State.Form.CurrentPage as QuestionsRedactorPage).answer3TextBox.Text = Question.WrongAnswer3;
                 (State.Form.CurrentPage as QuestionsRedactorPage).answer4TextBox.Text = Question.CorrectAnswer;
+
+                // Подсветка выбранного вопроса
+
+                foreach (var control in (State.Form.CurrentPage as QuestionsRedactorPage).questionsPanel.Controls.OfType<QuestionButtonControl>())
+                {
+                    control.IsSelected = false;
+                }
+                IsSelected = true;
             }
         }
     }

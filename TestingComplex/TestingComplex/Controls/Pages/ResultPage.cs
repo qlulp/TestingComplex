@@ -34,6 +34,8 @@ namespace TestingComplex.Controls.Pages
             string elapsedTime = String.Format("{0:00}:{1:00}",
             ts.Minutes, ts.Seconds);
             timePassedLabel.Text = $"Времени затрачено: " + elapsedTime;
+
+            BackColor = CurrentTheme.PageColor;
         }
 
         private void CommitResult()

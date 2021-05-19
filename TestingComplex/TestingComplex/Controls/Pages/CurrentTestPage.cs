@@ -27,6 +27,7 @@ namespace TestingComplex.Controls.Pages
             answer4Label.Text = State.Questions[State.QuestionIndex].CorrectAnswer;
             progressBar.Maximum = State.Questions.Length;
             progressBar.Value = State.QuestionIndex;
+            BackColor = CurrentTheme.PageColor;
         }
 
         private void Label_MouseEnter(object sender, EventArgs e)

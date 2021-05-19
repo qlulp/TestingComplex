@@ -98,14 +98,14 @@ namespace TestingComplex.Controls.Pages
                 AddTestBlocks();
                 UpdateCounter();
             }
-            else MessageBox.Show("Входная строка имеет неверный формат! Длина строки должна быть от 8 до 255 символов");
+            else MessageBox.Show("Входная строка имеет неверный формат! Длина строки должна быть от 3 до 255 символов");
         }
 
         private bool IsValidString(string str)
         {
             if (str == "")
                 return false;
-            if (str.Length < 8 || str.Length > 255)
+            if (str.Length < 3 || str.Length > 255)
                 return false;
             List<char> blackList = new List<char>
             {
@@ -142,25 +142,22 @@ namespace TestingComplex.Controls.Pages
         {
             string blockName = renameTextBox.Text;
             if (SelectedBlockID > 0 && IsValidString(blockName))
-            {
-                if (MessageBox.Show("Вы действительно хотите удалить выбранный тестовый блок?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    DBManager.RenameBlock(SelectedBlockID, blockName);
-                    renameTextBox.Text = "";
-                    AddTestBlocks();
-                    UpdateCounter();
-                    SelectedBlockID = -1;
-                }
+            { 
+                DBManager.RenameBlock(SelectedBlockID, blockName);
+                renameTextBox.Text = "";
+                AddTestBlocks();
+                UpdateCounter();
+                SelectedBlockID = -1;
             }
-            else MessageBox.Show("Входная строка имеет неверный формат! Длина строки должна быть от 8 до 255 символов");
+            else MessageBox.Show("Входная строка имеет неверный формат! Длина строки должна быть от 3 до 255 символов");
         }
 
         private void editBlockButton_Click(object sender, System.EventArgs e)
         {
             if (SelectedBlockID > 0)
             {
-                var page = new QuestionsRedactorPage();
-                page.BlockID = SelectedBlockID;
+                var page = new QuestionsRedactorPage(SelectedBlockID);
+                page.BlockName = renameTextBox.Text;
                 State.Form.CurrentPage = page;
             }
         }
